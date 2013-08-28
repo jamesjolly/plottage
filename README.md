@@ -1,14 +1,10 @@
 plottage
 ========
 
-plottage is where I plan to dump a variety of cleaned-up visualization tools I've written in the past. Most of these use matplotlib.
+plottage is where I'm incrementally dumping a variety of cleaned-up visualization tools I've written in the past. This first iteration just contains multiplot and graphucius.
 
-This first iteration just contains multiplot, a tool that displays one or more series in a single 2D figure. multiplot tries to make it distinguish between series by using different colors and point markers.
+multiplot displays one or more series in a single 2D figure. It tries to make it easy to distinguish between series by using different colors and point markers. matplotlib is required.
 
-Try it out with the example data included:
+graphucius is a class that can be used to generate a DOT representation of weighted directed graph. You can use graphviz to turn this into an image.
 
-./multiplot.py example_figure.png "test title" "test x label" "test y label" series1.txt series2.txt series3.txt
-
-Edit constants c_colorwheel and c_markerwheel if you want to draw from a different set of styles. multiplot assumes adjacent c_colorwheel values are equally different from each other.
-
-If you find plottage useful or have a suggestion for new tool or killer feature, let me know! jamesjolly@gmail.com
+If you find plottage useful or have a suggestion for new tool or killer feature, let me know! jolly@cs.wisc.edu

@@ -3,6 +3,12 @@
 plottage 0.1
 Copyright (C) 2013, James Jolly (jamesjolly@gmail.com)
 See MIT-LICENSE.txt for legalese and README.md for usage.
+
+Try it out with the example data included:
+./multiplot.py example_figure.png "test title" "test x label" "test y label" series1.txt series2.txt series3.txt
+
+Edit c_colorwheel and c_markerwheel if you want to draw from a different set of styles.
+multiplot assumes adjacent c_colorwheel values are equally different from each other.
 """
 
 import sys
@@ -76,7 +82,8 @@ if __name__ == "__main__":
     argc = len(sys.argv)
     argc_required = 5
     if argc <= argc_required:
-       print 'argument error, try: ./multiplot.py figure.png title xlabel ylabel series1.txt (series2.txt series3.txt ...)'
+       print 'displays one or more series in a single 2D figure.\n'
+             './multiplot.py figure.png title xlabel ylabel series1.txt (series2.txt series3.txt ...)'
        sys.exit(0)
 
     colorinc = max(len(c_colorwheel)/(argc - argc_required), 1)

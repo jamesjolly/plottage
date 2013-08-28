@@ -1,9 +1,3 @@
-#!/usr/bin/python
-"""
-plottage 0.1
-Copyright (C) 2013, James Jolly
-See MIT-LICENSE.txt for legalese and README.md for usage.
-"""
 
 from collections import defaultdict
 
@@ -27,9 +21,9 @@ class graph:
 		q = [start_node]
 		visited = set()
 		while len(q) > 0:
-			if search_type == "dfs": node_id = q.pop()
-			else: node_id = q.pop(0)
-			if node_id in visited: continue
+			node_id = q.pop() if search_type == "dfs" else q.pop(0)
+			if node_id in visited:
+			  continue
 			visited.add(node_id)
 			yield node_id
 			for child_id, child_weight in self.graph[node_id]:
